@@ -48,7 +48,7 @@
     2) Monitors multiple kafka clusters
     
 # Pipeline
-
+https://github.com/ajaykrishna2013/Data-Engineering/blob/master/CEPAnalyticsPipeline/app/templates/Pipeline.png
    
  # Stretch Goal
    Clients can be software developers in the CI/CD pipeline. So Jenkins to provide continuous integration of code and
