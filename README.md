@@ -46,6 +46,9 @@
    ### Benefits of using Burrow
     1) Continously calculating lag over a sliding window
     2) Monitors multiple kafka clusters
+    
+# Pipeline
+
    
  # Stretch Goal
    Clients can be software developers in the CI/CD pipeline. So Jenkins to provide continuous integration of code and
