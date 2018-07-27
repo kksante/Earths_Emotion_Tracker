@@ -48,7 +48,7 @@
     2) Monitors multiple kafka clusters
    
  # Stretch Goal
-   Clients will be software developers in the CI/CD pipeline. So Jenkins to provide continuous integration of code and
+   Clients can be software developers in the CI/CD pipeline. So Jenkins to provide continuous integration of code and
    continuous deployment of the code
    
    
