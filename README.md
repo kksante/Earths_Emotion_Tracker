@@ -27,8 +27,8 @@
    
    TOOLS
    1) Terraform (IaC)
-   2) Kubernetes/Docker (containers)
-   3) Jenkins (CI/CD)
+   2) Chef
+   3) Jenkins (CI/CD) as a stretch goal
    4) Burrow (Monitoring)
    
    Terraform will provision EC2 servers, docker will create containers with the pre-install packages and kubernetes will 
