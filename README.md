@@ -39,10 +39,9 @@
     2) Immutable states
     3) declarative lanaguage 
     4) client-only architecture and thus much better in security
-   ### Benefits of using Kubernetes
-    1) High scalability
-    2) Easier container management
-    3) Reduce delay in communication
+   ### Benefits of using Chef
+    1) Flexible
+    2) Mature language
    ### Benefits of using Burrow
     1) Continously calculating lag over a sliding window
     2) Monitors multiple kafka clusters
