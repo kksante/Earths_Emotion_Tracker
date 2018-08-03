@@ -47,7 +47,7 @@
     2) Monitors multiple kafka clusters
     
 # Pipeline
-https://github.com/ajaykrishna2013/Data-Engineering/blob/master/CEPAnalyticsPipeline/app/templates/Pipeline.png
+https://raw.githubusercontent.com/karthikvegi/world-monitor/master/images/pipeline.png
    
  # Stretch Goal
    Jenkins to provide continuous integration of code and continuous deployment of the code
