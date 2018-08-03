@@ -1,7 +1,7 @@
 # Insight-DevOps-2018-Project
   This is the repo for my DevOps 2018 Insight Project
 
-# PROACTIVE & PREDICTIVE CAPACITY PLANNING
+# CAPACITY PLANNING
   
 ## Introduction
    Nowadays, many businesses are adopting cloud based solutions to serve their clients. For these businesses, utilizing
