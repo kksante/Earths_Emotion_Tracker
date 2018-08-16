@@ -324,7 +324,7 @@ resource "null_resource" "spark_controller" {
     private_key = "${file("${var.PATH_TO_PRIVATE_KEY}")}"
   }
 
-  # We need cassandra and spark cluster configured first
+  # We need spark cluster configured first
   depends_on = ["null_resource.spark_master", "null_resource.spark_worker" ]
 
   # Provision the SSH configuration script
@@ -429,7 +429,8 @@ resource "null_resource" "cassandra_worker" {
     inline = [
       "echo \"export AWS_ACCESS_KEY_ID='${var.AWS_ACCESS_KEY}'\nexport AWS_SECRET_ACCESS_KEY='${var.AWS_SECRET_KEY}'\nexport AWS_DEFAULT_REGION='${var.aws_region}'\" >> ~/.profile",
       "chmod +x /tmp/cassandra_setup.sh",
-      "bash /tmp/cassandra_setup.sh 'cassandra', '${aws_instance.cassandra_master.private_dns}' '${aws_instance.cassandra_master.private_dns}'",
+      "bash /tmp/cassandra_setup.sh 'cassandra' '${aws_instance.cassandra_master.private_dns}' ${element(aws_instance.cassandra_worker.*.private_dns, "${count.index}")}",
+      "/usr/local/cassandra/bin/cassandra"
     ]
   }
 }
@@ -479,7 +480,8 @@ resource "null_resource" "cassandra_master" {
       "bash /tmp/add_to_known_hosts.sh '${aws_instance.cassandra_master.public_dns}' '${aws_instance.cassandra_master.private_dns}' '${join("' '", "${aws_instance.cassandra_worker.*.private_dns}")}'",
       "echo \"export AWS_ACCESS_KEY_ID='${var.AWS_ACCESS_KEY}'\nexport AWS_SECRET_ACCESS_KEY='${var.AWS_SECRET_KEY}'\nexport AWS_DEFAULT_REGION='${var.aws_region}'\" >> ~/.profile",
       "chmod +x /tmp/cassandra_setup.sh",
-      "bash /tmp/cassandra_setup.sh 'cassandra' '${aws_instance.cassandra_master.private_dns}' '${element(aws_instance.cassandra_worker.*.private_dns, "${count.index}")}'"
+      "bash /tmp/cassandra_setup.sh 'cassandra' '${aws_instance.cassandra_master.private_dns}' '${aws_instance.cassandra_master.private_dns}'",
+      "/usr/local/cassandra/bin/cassandra"
     ]
   }
 }
