@@ -385,7 +385,7 @@ resource "null_resource" "spark_controller" {
 
 resource "aws_instance" "flask" {
   ami = "${lookup(var.amis, "flask")}"
-  instance_type = "m4.large"
+  instance_type = "t2.micro"
   key_name = "${aws_key_pair.mykeypair.key_name}"
   count = 1
   vpc_security_group_ids = ["${module.security_group_network.spark_cluster_sg_id}"]

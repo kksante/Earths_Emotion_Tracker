@@ -43,7 +43,7 @@ variable "cluster_name" {
 
 # Overwritten by build.sh
 variable "NUM_WORKERS" { default = 3 }
-variable "cassandra_NUM_WORKERS" { default = 2 }
+variable "cassandra_NUM_WORKERS" { default = 3 }
 
 # Overwritten by build.sh
 variable "PATH_TO_PUBLIC_KEY" { default = "~/Documents/Earths_Emotion_Tracker/devOps/terraform/mykeypair.pub" }

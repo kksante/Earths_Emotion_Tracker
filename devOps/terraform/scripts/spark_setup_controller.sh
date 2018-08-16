@@ -15,9 +15,9 @@ sudo apt-get install git-core
 git clone https://github.com/kksante/Earths_Emotion_Tracker.git
 
 #Download spark_cassandra_connector and put in ~/Earths_Emotion_Tracker/Emotions/src
-#datastaxConnector_URL=http://dl.bintray.com/spark-packages/maven/datastax/spark-cassandra-connector/2.3.1-s_2.11/spark-cassandra-connector-2.3.1-s_2.11.jar
-#sudo wget ${"datastaxConnector_URL"}
-#sudo mv ~/spark-cassandra-connector-*.jar ~/Earths_Emotion_Tracker/Emotions
+datastaxConnector_URL=http://dl.bintray.com/spark-packages/maven/datastax/spark-cassandra-connector/2.3.1-s_2.11/spark-cassandra-connector-2.3.1-s_2.11.jar
+sudo wget ${"datastaxConnector_URL"}
+sudo mv ~/spark-cassandra-connector-*.jar ~/Earths_Emotion_Tracker/Emotions/src
 
 
 

@@ -1,7 +1,7 @@
 from pyspark import SparkContext
 from metadata_dict import country_names, event_names, event_cause
 from operator import itemgetter
-#import pyspark_cassandra
+import pyspark_cassandra
 
 
  # Create Spark context & session
@@ -17,8 +17,8 @@ SPARK_URL = "spark://ip-10-1-122-70.us-west-2.compute.internal:7077"
 
 #sqlContext = SQLContext(sc)
 # sc = SparkContext("SPARK_URL", "datafile", conf=conf )
-sc = SparkContext(SPARK_URL, 'dummy')
-data = sc.textFile("s3a://devopsgdelt/events/2018*")
+sc = SparkContext()
+data = sc.textFile("s3a://devopsgdelt/events/20180805*")
 # data = sc.textFile("s3a://gdelt-open-data/events/*")
 # data = sc.textFile("s3a://gdelt-open-data/events/*")
 rdd = data.map(lambda x: x.encode("utf", "ignore"))
